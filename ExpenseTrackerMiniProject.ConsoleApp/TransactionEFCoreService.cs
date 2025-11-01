@@ -20,7 +20,7 @@ public class TransactionEFCoreService
             Console.WriteLine();
             Console.WriteLine($"Add {type} ---------");
             var categories = appDbContext.TblCategories
-                        .Where(x => x.DeleteFlag == false)
+                        .Where(x => x.DeleteFlag == false && x.Type == type)
                         .ToList();
 
             Console.WriteLine("Select Category:");
